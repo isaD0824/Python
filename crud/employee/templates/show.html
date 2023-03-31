@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Record</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <npm i bootstrap@5.3.0-alpha2>
+</head>
+
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>ID del producto</th>
+                <th>Nombre del producto</th>
+                <th>Precio</th>
+                <th>Fecha de ingreso</th>
+                <th>Bebida acompañante</th>
+                <th>Descuento por temporada</th>
+                <th>Action</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            {% for employee in employees %}
+            <tr>
+                <td>{{ employee.eid }}</td>
+                <td>{{employee.ename}}</td>
+                <td>{{employee.eemail}}</td>
+                <td>{{employee.econtact}}</td>
+                <td>{{employee.ebebida}}</td>
+                <td>{{employee.edescuento}}</td>
+                <td>
+                    <a class="edit" href="/edit/{{ employee.id }}">Edit</a>
+                    <a class="delete" href="/delete/{{employee.id}}">Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <br>
+    <br>
+    <button><a style="color:white;" href="/emp">Add New Record</a></button>
+</body>
+
+</html>

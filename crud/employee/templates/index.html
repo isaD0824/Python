@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    <div>
+        <h1>Productos de la Dulceria</h1>
+    </div>
+    <form method="POST" action="/emp">
+        {% csrf_token %}
+        <div>
+            <br>
+            <p>
+                <h3>Ingrese los detalles</h3>
+            </p>
+            <div>
+                <p>Id del producto</p>{{ form.eid }}
+            </div>
+            <div>
+                <p>Nombre del producto</p>{{ form.ename }}
+            </div>
+            <div>
+                <p>Precio</p>{{ form.eemail }}
+            </div>
+            <div>
+                <p>Fecha de ingreso</p>{{ form.econtact }}
+            </div>
+            <div>
+                <p>Bebida acompañante</p>{{ form.ebebida }}
+            </div>
+            <div>
+                <p>Descuento por temporada</p>{{ form.edescuento }}
+            </div>
+            <div>
+                <br>
+                <button type="submit">INGRESAR</button>
+            </div>
+        </div>
+    </form>
+</body>
+
+</html>
